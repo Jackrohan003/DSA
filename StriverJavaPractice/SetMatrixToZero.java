@@ -49,6 +49,38 @@ public class SetMatrixZero {
             System.out.println();
         }
     }
+	
+    public static void setZeroes(int[][] m) {
     
+        int rlen = m.length;
+        int clen = m[0].length;
+        //Take two dummy array
+        int r[] = new int[rlen];
+        int c[] = new int[clen];
+        //Fill dummy array with -1
+        Arrays.fill(r,-1);
+        Arrays.fill(c,-1);
+       
+        //if perticular cell is zero then change the row and col dummy array to zero for that row and col index respectively.
+        for(int i=0;i<rlen;i++){
+            for(int j=0;j<clen;j++){
+                if(m[i][j]==0){
+                    r[i]=0;
+                    c[j]=0;
+                }
+            }
+        }
+        
+        for(int i=0;i<rlen;i++){
+            for(int j=0;j<clen;j++){
+                if(r[i] ==0 || c[j]==0){
+                    m[i][j]=0;
+                }
+            }
+        }
+        
+    }
+	
+	
 	
 }
